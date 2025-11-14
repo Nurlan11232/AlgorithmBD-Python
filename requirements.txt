@@ -1,0 +1,36 @@
+backend
+fastapi
+uvicorn[standard]
+geopandas
+shapely
+fiona
+rtree
+pyproj
+folium
+pytest
+
+
+1. OSM ӨГӨГДӨЛ ТАТАХ
+   ↓
+2. ГРАФИК ҮҮСГЭХ (node, edge, weight)
+   ↓
+3. АЛГОРИТМУУД БИЧИХ (BFS, DFS, Dijkstra)
+   ↓
+4. REST API БЭЛТГЭХ (Backend)
+   ↓
+5. ГАЗРЫН ЗУРАГ ХАРУУЛАХ (Frontend)
+   ↓
+6. ТЕСТ БИЧИХ
+   ↓
+7. БАРИМТ БИЧИГ БЭЛТГЭХ
+
+ frontend/
+│   ├── index.html         # Leaflet UI
+│   
+│   └── api-client.js      # Backend-тай холбогдох
+
+
+main.py → build_graph_from_shapefile()
+          ↳ osm_loader.py → Graph үүсгэнэ
+Graph → BFS / DFS / Dijkstra ашиглана
+→ API JSON буцаана → frontend (Leaflet map) дээр дүрслэгдэнэ

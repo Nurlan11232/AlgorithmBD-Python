@@ -1,0 +1,153 @@
+/* frontend/css/styles.css */
+
+* {
+    box-sizing: border-box;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#controls {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.control-group {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.coord-input {
+    display: inline-flex;
+    gap: 5px;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+select {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+button {
+    padding: 10px 24px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background: #059669;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* ========== Map ========== */
+#map {
+    width: 100%;
+    height: calc(100vh - 120px);
+}
+
+/* ========== Status Bar ========== */
+#status {
+    padding: 10px 20px;
+    background: #f3f4f6;
+    border-top: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: #374151;
+    min-height: 40px;
+}
+
+#status.loading {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+#status.error {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+#status.success {
+    color: #059669;
+    font-weight: 600;
+}
+
+.loading::after {
+    content: '⏳';
+    margin-left: 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ========== Info Panel ========== */
+.info-panel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-width: 300px;
+    display: none;
+}
+
+.info-panel.show {
+    display: block;
+}
+
+.info-panel h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #667eea;
+}
+
+.info-item {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.info-item span {
+    font-weight: 600;
+    color: #1f2937;
+}
